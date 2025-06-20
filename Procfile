@@ -1,1 +1,1 @@
-web: java -jar target/*.jar --spring.profiles.active=prod
+echo "web: java -Xmx512m -Xms256m -jar target/sales-management-api-4.0.1.jar --spring.profiles.active=prod --server.port=\$PORT" > Procfile
