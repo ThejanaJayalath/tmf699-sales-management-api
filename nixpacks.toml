@@ -1,0 +1,13 @@
+# nixpacks.toml
+[phases.setup]
+nixPkgs = ["...", "maven", "openjdk17"]
+
+[phases.build]
+cmds = ["mvn clean package -DskipTests -Dmaven.javadoc.skip=true"]
+
+[phases.start]
+cmd = "java -jar target/sales-management-api-4.0.1.jar --spring.profiles.active=prod"
+
+[variables]
+MAVEN_OPTS = "-Xmx1024m"
+JAVA_OPTS = "-Xmx512m"
